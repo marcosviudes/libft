@@ -2,17 +2,17 @@
 
 void		*memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char	*_dest;
+	char	*_dst;
 	char	*_src;
 
 	_src = (char *)src;
-	_dest = dest;
+	_dst = dest;
 
 	while(n--)
 	{
-		*_dest++ = *_src++;
+		*_dst++ = *_src++;
 		if(*_src == c)
-			return (&_dest++);
+			return (_dst++);
 	}
 	return (0);
 }
