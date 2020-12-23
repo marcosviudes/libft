@@ -1,9 +1,9 @@
 #include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void		*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char *_dest;
-	char *_src;
+	char	*_dest;
+	char	*_src;
 	
 	if(!dest || !src || !n)
 		return (0);

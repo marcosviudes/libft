@@ -12,7 +12,9 @@ SRCS	=	ft_bzero.c\
 			ft_memset.c\
 			ft_memccpy.c\
 			ft_memmove.c\
-			ft_memchr.c
+			ft_memchr.c\
+			ft_strlen.c\
+			ft_strlcpy.c
 BSRCS	=
 OBJS	=$(SRCS:.c=.o)
 BOBJS	=$(BSRCS:.c=.o)
