@@ -1,39 +1,37 @@
 .DELETE_ON_ERROR:
 
-NAME	:= libft.a
-LIB		:= ar rcs
-RM		:= rm -rf
-CC		:= gcc
-CFLAGS	:= -o -Wall -Wextra -Werror
+NAME	= libft.a
+LIB		= ar rcs
+RM		= rm -rf
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror -Wpedantic
 
-INCLUDE	:=	libft.h
-SRCS	:=	ft_bzero.c\
+INCLUDE	=	libft.h
+SRCS	=	ft_bzero.c\
 			ft_memcpy.c\
 			ft_memset.c
-BSRCS	:= 
-OBJS	:= $(SRCS:.c=.o)
+BSRCS	=
+OBJS	=$(SRCS:.c=.o)
+BOBJS	=$(BSRCS:.c=.o)
 
-$(OBJS):
-	$(CC)$(CFLAGS)$(SRCS)
-
-$(BONUS:
-	$(CC)$(CFLAGS)$(BSRCS)
-
-$(NAME): OBJS INCLUDE
-	$(LIB)$(NAME)$(OBJS)
-
-bonus: OBJS BONUS INCLUDE
-	$(CC)$(NAME)$(OBJS)$(BONUS)
 
 all: $(NAME)
-	$(LIB)$(OBJS)
 
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRCS)
+	$(CC) -shared -o libft.so $(OBJS)
+$(NAME): $(OBJS)
+	@ $(LIB) $(NAME) $(OBJS)
+	@ echo "$(NAME) Compiled"
+bonus: $(OBJS) $(BOBJS)
+	@ $(LIB) $(NAME) $(OBJS)
+	@ echo "$(NAME) Compiled with bonus"
 clean:
-	$(RM)$(OBJS) $(BONUS)
-
+	@ $(RM) $(OBJS) $(BOBJS)
+	@ echo	"All objs removed"
 fclean: clean
-	$(RM) $(NAME)
-
+	@ $(RM) $(NAME)
+	@ echo "$(NAME) removed"
 re:		fclean all
 
 .PHONY: all clean fclean re debug
