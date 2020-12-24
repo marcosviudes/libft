@@ -14,7 +14,10 @@ SRCS	=	ft_bzero.c\
 			ft_memmove.c\
 			ft_memchr.c\
 			ft_strlen.c\
-			ft_strlcpy.c
+			ft_strlcpy.c\
+			ft_strlcat.c\
+			ft_strchr.c\
+			ft_strrchr.c
 BSRCS	=
 OBJS	=$(SRCS:.c=.o)
 BOBJS	=$(BSRCS:.c=.o)
@@ -22,9 +25,6 @@ BOBJS	=$(BSRCS:.c=.o)
 
 all: $(NAME)
 
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRCS)
-	$(CC) -shared -o libft.so $(OBJS)
 $(NAME): $(OBJS)
 	@ $(LIB) $(NAME) $(OBJS)
 	@ echo "$(NAME) Compiled"
