@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mviudes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/28 12:44:06 by mviudes           #+#    #+#             */
+/*   Updated: 2020/12/28 12:56:13 by mviudes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int		strncmp(const char *s1, const char *s2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	const char	*_s1;
-	const char	*_s2;
+	const char	*s1_;
+	const char	*s2_;
 
-	_s1 = s1;
-	_s2 = s2;
-	while(n--)
+	s1_ = s1;
+	s2_ = s2;
+	while (n--)
 	{
-		if(*_s1++ != *_s2++)
-			return(*_s1 - *_s2);
-		if(*_s1 == '\0')
+		if (*s1_++ != *s2_++)
+			return (*s1_ - *s2_);
+		if (*s1_ == '\0')
 			return (0);
 	}
 	return (0);

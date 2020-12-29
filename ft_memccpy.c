@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mviudes <mviudes@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/28 12:41:23 by mviudes           #+#    #+#             */
+/*   Updated: 2020/12/28 13:42:03 by mviudes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void		*memccpy(void *dest, const void *src, int c, size_t n)
+void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char	*_dst;
-	char	*_src;
+	char	*dst_;
+	char	*src_;
 
-	_src = (char *)src;
-	_dst = dest;
-
-	while(n--)
+	src_ = (char *)src;
+	dst_ = dest;
+	while (n--)
 	{
-		*_dst++ = *_src++;
-		if(*_src == c)
-			return (_dst++);
+		*dst_++ = *src_;
+		if (*src_ == c)
+			return (dst_);
+		src_++;
 	}
 	return (0);
 }
