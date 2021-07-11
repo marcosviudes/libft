@@ -6,7 +6,7 @@
 /*   By: mviudes <mviudes@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:53:25 by mviudes           #+#    #+#             */
-/*   Updated: 2021/05/12 21:57:42 by mviudes          ###   ########.fr       */
+/*   Updated: 2021/07/11 22:43:49 by mviudes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ static char	*allocate_str(int size, int n)
 	return (str);
 }
 
+static unsigned int	ft_absolute(int number)
+{
+	if (number < 0)
+		return ((unsigned int)(number * -1));
+	return ((unsigned int)number);
+}
+
 char	*ft_itoa(int n)
 {
 	char			*str;
@@ -46,17 +53,16 @@ char	*ft_itoa(int n)
 	unsigned int	i;
 	unsigned int	size;
 
-	if (n < 0)
-		un = (unsigned int)(n * -1);
-	else
-		un = (unsigned int)n;
+	un = ft_absolute(n);
 	size = ft_size(un);
 	str = allocate_str(size, n);
 	if (!str)
 		return (NULL);
-	i = 0;
-	if (n < 0 && (str[i] = '-'))
+	if (n < 0 )
+	{
+		str[0] = '-';
 		size++;
+	}
 	i = size - 1;
 	while (un >= 10)
 	{

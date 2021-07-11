@@ -1,14 +1,15 @@
 # **************************************************************************** #
-#																			   #
-#														  :::	   ::::::::    #
-#	 Makefile											:+:		 :+:	:+:    #
-#													  +:+ +:+		  +:+	   #
-#	 By: mviudes <mviudes@student.42.fr>			+#+  +:+	   +#+		   #
-#												  +#+#+#+#+#+	+#+			   #
-#	 Created: 2019/11/10 17:14:57 by mviudes		   #+#	  #+#			   #
-#	 Updated: 2019/12/06 16:58:11 by mviudes		  ###	########.fr		   #
-#																			   #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mviudes <mviudes@student.42madrid.com>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/07/11 22:32:28 by mviudes           #+#    #+#              #
+#    Updated: 2021/07/11 22:59:49 by mviudes          ###   ########.fr        #
+#                                                                              #
 # **************************************************************************** #
+
 
 SRCS	=	ft_atoi.c\
 			ft_bzero.c\
@@ -46,6 +47,7 @@ SRCS	=	ft_atoi.c\
 			ft_putstr.c\
 			ft_putstr_fd.c\
 			ft_split.c\
+			ft_striteri.c\
 			ft_strchr.c\
 			ft_strdup.c\
 			ft_strjoin.c\
@@ -61,7 +63,7 @@ SRCS	=	ft_atoi.c\
 			ft_substr.c\
 			ft_swap.c\
 			ft_tolower.c\
-			ft_toupper.c
+			ft_toupper.c\
 
 OBJS	= ${SRCS:.c=.o}
 CC		= gcc 
