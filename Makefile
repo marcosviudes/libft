@@ -6,10 +6,9 @@
 #    By: mviudes <mviudes@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/11 22:32:28 by mviudes           #+#    #+#              #
-#    Updated: 2021/07/11 22:59:49 by mviudes          ###   ########.fr        #
+#    Updated: 2021/07/11 23:03:54 by mviudes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 SRCS	=	ft_atoi.c\
 			ft_bzero.c\
@@ -66,7 +65,7 @@ SRCS	=	ft_atoi.c\
 			ft_toupper.c\
 
 OBJS	= ${SRCS:.c=.o}
-CC		= gcc 
+CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
 NAME	= libft.a
 MAKE	= make
@@ -81,7 +80,7 @@ clean:
 fclean:		clean
 			@rm -f ${NAME}
 			@echo "$(NAME) deleted"
-re:			
-	$(MAKE) fclean 
+re:
+	$(MAKE) fclean
 	$(MAKE) all
 .PHONY:		all bonus clean fclean re
