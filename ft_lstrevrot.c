@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstrevrot.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mviudes <mviudes@student.42madrid.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/07 12:36:01 by mviudes           #+#    #+#             */
+/*   Updated: 2021/08/07 12:36:43 by mviudes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_lstrevrot (t_list **list)
+int	ft_lstrevrot(t_list **list)
 {
 	t_list	*last;
 	t_list	*temp;
